@@ -1,6 +1,7 @@
 <template>
   <Header></Header>
-  <hr />
+
+  <Modal />
 
   <template v-if="id">
     <div class="flex text-center pt-2 text-red-600 justify-center">
@@ -8,12 +9,17 @@
     </div>
   </template>
 
-  <div className="flex flex-row justify-normal w-full p-5 pt-0 justify-center">
-    <!-- <div class="text-start w-full">
-      <h1 class="font-bold text-lg text-start">{{ user.name }}</h1>
-    </div> -->
+  <div className="flex justify-center">
+    <div class="flex border-solid border-2 border-indigo-600 w-max">
+      <img
+        src="/images/nasachallenge.jpeg"
+        class="rounded-full h-20 text-left"
+        alt=""
+      />
+      <span></span>
+    </div>
 
-    <div class="p-5">
+    <div class="w-full">
       <FeedComponent :id="id"></FeedComponent>
     </div>
 
@@ -26,10 +32,11 @@
 <script>
 import Header from "@/components/shared/Header.vue";
 import FeedComponent from "@/components/FeedComponent.vue";
+import Modal from "@/components/Modal.vue";
 import Tag from "@/components/Tags.vue";
 
 export default {
-  components: { Header, FeedComponent, Tag },
+  components: { Header, FeedComponent, Modal, Tag },
   data() {
     return {
       id: null,

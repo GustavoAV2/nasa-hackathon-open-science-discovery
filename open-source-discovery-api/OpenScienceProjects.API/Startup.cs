@@ -1,9 +1,16 @@
-﻿using OpenScienceProjects.API.Extensions;
+﻿    using OpenScienceProjects.API.Extensions;
 
 namespace OpenScienceProjects.API;
 
 public class Startup
 {
+    private readonly IConfiguration Configuration;
+
+    public Startup(IConfiguration configuration)
+    {
+        Configuration = configuration;
+    }
+
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
@@ -25,7 +32,9 @@ public class Startup
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
-        services.AddApplicationServices();
+        services.AddDatabase(Configuration.GetConnectionString("DefaultConnection"));
+        services.AddRepositories();
+        services.AddServices();
     }
 
     public void Configure(WebApplication app)

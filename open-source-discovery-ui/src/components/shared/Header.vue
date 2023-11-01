@@ -1,16 +1,12 @@
 <template>
   <header class="bg-white">
     <nav
-      class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+      class="mx-auto flex max-w-7xl items-center justify-between"
       aria-label="Global"
     >
       <div class="flex lg:flex-1">
-        <a href="/" class="-m-1.5 p-1.5">
-          <img
-            class="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            alt=""
-          />
+        <a href="/" class="">
+          <img class="h-24" src="/images/nasachallenge.png" alt="" />
         </a>
       </div>
 
@@ -41,6 +37,7 @@
         </template>
       </div>
     </nav>
+    <hr />
   </header>
 </template>
 

@@ -14,23 +14,15 @@ namespace OpenScienceProjects.API;
 
 public static class DependencyInjection
 {
-    public static void AddApplicationServices(this IServiceCollection services)
-    {
-        services.AddDatabase();
-        services.AddRepositories();
-        services.AddServices();
-    }
-
-    private static void AddDatabase(this IServiceCollection services)
+    public static void AddDatabase(this IServiceCollection services, string connectionString)
     {
         services.AddDbContext<DatabaseContext>(options =>
         {
-            var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");
-            options.UseSqlServer(connectionString!);
+            options.UseSqlServer(connectionString);
         });
     }
 
-    private static void AddRepositories(this IServiceCollection services)
+    public static void AddRepositories(this IServiceCollection services)
     {
         services.AddTransient<IOrganizationRepository, OrganizationRepository>();
         services.AddTransient<IProjectRepository, ProjectRepository>();
@@ -42,7 +34,7 @@ public static class DependencyInjection
         services.AddTransient<ICommentRepository, CommentRepository>();
     }
 
-    private static void AddServices(this IServiceCollection services)
+    public static void AddServices(this IServiceCollection services)
     {
         services.AddTransient<IUserService, UserService>();
         services.AddTransient<IProjectService, ProjectService>();
