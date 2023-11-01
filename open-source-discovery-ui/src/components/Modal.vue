@@ -24,6 +24,9 @@ export default {
       }
     },
     closeModal() {
+      if (this.selectedTags.length > 0){
+        localStorage.setItem('local-tags', this.selectedTags.toString())
+      }
       let modal = document.getElementById("crypto-modal");
       modal.className += " hidden ";
     },

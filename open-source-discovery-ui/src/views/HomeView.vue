@@ -9,22 +9,35 @@
     </div>
   </template>
 
-  <div className="flex justify-center">
-    <div class="flex border-solid border-2 border-indigo-600 w-max">
-      <img
-        src="/images/nasachallenge.jpeg"
-        class="rounded-full h-20 text-left"
-        alt=""
-      />
-      <span></span>
+  <div className="flex flex-col justify-center md:flex-row">
+    <div class="p-2">
+      <h1 class="pb-1 font-bold">Tags:</h1>
+      <Tag :id="id"></Tag>
     </div>
 
     <div class="w-full">
       <FeedComponent :id="id"></FeedComponent>
     </div>
 
-    <div class="p-5">
-      <Tag :id="id"></Tag>
+    <div
+      class="flex flex-col border-solid w-max items-start p-4 text-xs md:text-lg cursor-pointer"
+    >
+      <div class="flex items-center w-max">
+        <img
+          src="/images/companies/nasa.png"
+          class="rounded-full h-10 text-left"
+          alt=""
+        />
+        <span class="opacity-80">NASA</span>
+      </div>
+      <div class="flex items-center w-max">
+        <img
+          src="/images/companies/nasa.png"
+          class="rounded-full h-10 text-left"
+          alt=""
+        />
+        <span class="opacity-80">Tech for Good Labs</span>
+      </div>
     </div>
   </div>
 </template>
