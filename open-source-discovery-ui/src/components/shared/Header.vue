@@ -11,9 +11,7 @@
       </div>
 
       <div class="w-3/5">
-        <label
-          for="search"
-          class="text-sm font-medium text-gray-900 sr-only"
+        <label for="search" class="text-sm font-medium text-gray-900 sr-only"
           >Search</label
         >
         <div class="relative">
@@ -54,9 +52,12 @@
 
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <template v-if="logged">
-          <p class="text-sm font-semibold leading-6 text-gray-900">
-            Seja bem vindo Gustavo!
-          </p>
+          <div>
+            <img src="" alt="" />
+            <p class="text-sm font-semibold leading-6 text-gray-900">
+              <a href="/profile"> Seja bem vindo Gustavo! </a>
+            </p>
+          </div>
           <a
             v-on:click="logout()"
             href="/"
