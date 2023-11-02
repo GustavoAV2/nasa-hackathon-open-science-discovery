@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OpenScienceProjects.API.Data;
+using OpenScienceProjects.API.Tools.JwtUtils;
 using OpenScienceProjects.API.Data.Repositories.Comments;
 using OpenScienceProjects.API.Data.Repositories.Discussions;
 using OpenScienceProjects.API.Data.Repositories.Organizations;
@@ -41,5 +42,6 @@ public static class DependencyInjection
         services.AddTransient<IOrganizationService, OrganizationService>();
         services.AddTransient<IDiscussionService, DiscussionService>();
         services.AddTransient<ICommentService, CommentService>();
+        services.AddTransient<IJwtUtils, JwtUtils>();
     }
 }
