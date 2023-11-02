@@ -23,7 +23,7 @@ public class UsersController : ControllerBase
         return _userService.CreateUser(userCreateModel);
     }
     
-    [HttpPost]
+    [HttpPost("login")]
     public Task LoginUser(UserLoginModel loginModel)
     {
         return _userService.LoginUser(loginModel);
