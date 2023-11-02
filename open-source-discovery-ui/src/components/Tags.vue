@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul
-      class="flex flex-row max-w-screen-sm md:flex-col md:w-48 overflow-x-scroll text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg"
+      class="flex flex-row max-w-screen-sm md:flex-col md:w-48 overflow-x-scroll md:overflow-x-auto text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg"
     >
       <li
         v-for="tag in tags"
