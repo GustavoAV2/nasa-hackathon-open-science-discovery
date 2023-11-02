@@ -1,8 +1,11 @@
-﻿using OpenScienceProjects.API.Data.Repositories.Users;
+﻿using System.Security.Authentication;
+using Microsoft.AspNetCore.Mvc;
+using OpenScienceProjects.API.Data.Repositories.Users;
 using OpenScienceProjects.API.Data.Repositories.UserTags;
 using OpenScienceProjects.API.Domain.Models.Users;
 using OpenScienceProjects.API.Domain.Reponses.Users;
 using OpenScienceProjects.API.Domain.Entities;
+using OpenScienceProjects.API.Tools.JwtUtils;
 
 namespace OpenScienceProjects.API.Services
 {
@@ -10,13 +13,16 @@ namespace OpenScienceProjects.API.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IUserTagRepository _userTagRepository;
+        private readonly IJwtUtils _jwtUtils;
 
         public UserService(
             IUserRepository userRepository,
-            IUserTagRepository userTagRepository)
+            IUserTagRepository userTagRepository,
+            IJwtUtils jwtUtils)
         {
             _userRepository = userRepository;
             _userTagRepository = userTagRepository;
+            _jwtUtils = jwtUtils;
         }
 
         public async Task CreateUser(UserCreateModel model)
@@ -41,9 +47,25 @@ namespace OpenScienceProjects.API.Services
             await _userTagRepository.InsertMany(userTags);
         }
 
+        public async Task<string> LoginUser(UserLoginModel model)
+        {
+            var user = await _userRepository.GetUserByEmail(model.Email);
+
+            if (user == null)
+            {
+                throw new InvalidCredentialException();
+            }
+            return _jwtUtils.GenerateToken(user);
+        }
+        
+        public int? ValidateUserToken(string token)
+        {
+            return _jwtUtils.ValidateToken(token);
+        }
+
         public async Task<UserListByEmailResponse> GetUserListByEmail(string email)
         {
-            var users = await _userRepository.GetUserListByEmail(email);
+            var users = await _userRepository.GetUserByEmail(email);
 
             return new UserListByEmailResponse
             {

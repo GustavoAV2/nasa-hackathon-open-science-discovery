@@ -22,7 +22,19 @@ public class UsersController : ControllerBase
     {
         return _userService.CreateUser(userCreateModel);
     }
+    
+    [HttpPost]
+    public Task LoginUser(UserLoginModel loginModel)
+    {
+        return _userService.LoginUser(loginModel);
+    }
 
+    [HttpGet("{token}")]
+    public int? ValidateTokenUser(string token)
+    {
+        return _userService.ValidateUserToken(token);
+    }
+    
     [HttpGet("{id}")]
     public Task<UserListByIdResponse> GetUserListById(int id)
     {

@@ -50,7 +50,7 @@ public class UserRepository : IUserRepository
             }).FirstOrDefaultAsync();
     }
 
-    public Task<User> GetUserListByEmail(string email)
+    public Task<User> GetUserByEmail(string email)
     {
         return _entity
             .Where(x => x.Email == email)

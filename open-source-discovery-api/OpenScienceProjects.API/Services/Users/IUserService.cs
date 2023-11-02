@@ -6,6 +6,8 @@ namespace OpenScienceProjects.API.Services;
 public interface IUserService
 {
     Task CreateUser(UserCreateModel model);
+    Task<string> LoginUser(UserLoginModel model);
+    int? ValidateUserToken(string token);
     Task<UserListByEmailResponse> GetUserListByEmail(string email);
     Task<UserListByIdResponse> GetUserListById(int id);
     Task<UserListByNameResponse> GetUserListByName(string name);
