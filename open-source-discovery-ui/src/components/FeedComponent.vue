@@ -44,7 +44,6 @@
 import ProjectCard from "./shared/ProjectCard.vue";
 import ServiceProject from "@/services/project.js";
 import TagService from "@/services/tag";
-import project from "@/mock/project.js";
 
 export default {
   props: { id: String },
@@ -76,7 +75,6 @@ export default {
       ServiceProject.getListFiltered([]).then((response) => {
         this.projects = response.data.projects;
       });
-      this.projects = project;
     }
   },
 };

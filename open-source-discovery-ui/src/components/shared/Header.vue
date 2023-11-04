@@ -66,7 +66,10 @@
           >
         </template>
         <template v-else>
-          <a href="/login" class="text-sm font-semibold leading-6 text-gray-900"
+          <a
+            href="/login"
+            :aria-disabled="true"
+            class="text-sm font-semibold leading-6 text-gray-500"
             >Log in <span aria-hidden="true">&rarr;</span></a
           >
         </template>

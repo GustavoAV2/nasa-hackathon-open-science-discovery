@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OpenScienceProjects.API.Domain.Entities;
+using OpenScienceProjects.API.Domain.Models.Users;
 
 namespace OpenScienceProjects.API.Data.Repositories.ProjectsTags;
 
@@ -12,6 +13,11 @@ public class TagRepository : ITagRepository
     {
         _context = context;
         _entity = _context.Set<Tag>();
+    }
+
+    public Task<List<Tag>> GetAll()
+    {
+        return _entity.ToListAsync();
     }
 
     public async Task InsertMany(IEnumerable<Tag> tags)
