@@ -13,7 +13,7 @@
 <script>
 import Header from "@/components/shared/Header.vue";
 import Modal from "@/components/TagModal.vue";
-import Loading from "@/components/Shared/Loading.vue";
+import Loading from "@/components/shared/Loading.vue";
 
 export default {
   components: { Header, Loading, Modal },
