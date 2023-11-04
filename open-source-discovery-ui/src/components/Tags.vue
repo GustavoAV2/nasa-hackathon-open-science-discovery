@@ -29,7 +29,6 @@
 <script>
 import ProjectCard from "./shared/ProjectCard.vue";
 import TagService from "@/services/tag";
-import tag from "@/mock/tags.js";
 
 export default {
   props: { id: String },
@@ -45,14 +44,9 @@ export default {
         this.tags = response.data.tags;
       });
     } else {
-      let tagIds = localStorage.getItem("local-tags").split(",");
-      for (let i = 0; i < tag.length; i++) {
-        for (let t = 0; t < tagIds.length; t++) {
-          if (tag[i].id == tagIds[t]) {
-            this.tags.push(tag[i]);
-          }
-        }
-      }
+      TagService.getTags().then((response) => {
+        this.tags = response.data;
+      });
     }
   },
 };
