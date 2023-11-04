@@ -1,6 +1,6 @@
 import axios from 'axios'
 
 export const http = axios.create({
-    baseURL: 'https://openscience-api.azurewebsites.net/api',
+    baseURL: 'http:///localhost:6001/api',
 
 })

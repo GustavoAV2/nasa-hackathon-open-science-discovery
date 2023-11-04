@@ -53,7 +53,6 @@ export default {
           }
         }
       }
-      console.log(this.tags);
     }
   },
 };
