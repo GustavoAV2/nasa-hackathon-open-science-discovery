@@ -13,12 +13,21 @@
           >
             <a>{{ project.title }}</a>
           </h3>
-          <div
+
+          <a
+            class="font-bold uppercase tracking-widest text-xs md:text-lg text-blue-500 hover:underline hover:cursor-pointer"
+            :href="project.link"
+            target="_blank"
+            >Project Link</a
+          >
+
+          <!-- <div
             class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"
           >
             <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
             LOCAL (A preencher)
-          </div>
+          </div> -->
+
           <div class="mb-2 text-blueGray-600 mt-10">
             <a
               v-on:click="toOrganization()"
@@ -33,19 +42,6 @@
             >
               {{ tag }}
             </span>
-          </div>
-          <div class="mb-2 text-blueGray-600">
-            <i class="fas fa-university mr-2 text-lg text-blueGray-400"></i
-            >University of Computer Science
-          </div>
-          <div class="mb-2 text-blueGray-600">
-            <i class="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-            <a
-              class="font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer"
-              :href="project.link"
-              target="_blank"
-              >Project Link</a
-            >
           </div>
         </div>
         <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
