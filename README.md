@@ -1,6 +1,6 @@
 # Plataforma de Colaboração entre Projetos Sociais e Colaboradores
 
-Bem-vindo ao repositório da Plataforma de Colaboração entre Instituições Públicas e Desenvolvedores. Este projeto visa criar uma plataforma online que conecta instituições públicas com desenvolvedores em potencial para colaborarem em projetos.
+Bem-vindo ao repositório da Plataforma de Colaboração entre Instituições Públicas e Colaboradores. Este projeto visa criar uma plataforma online que conecta instituições públicas com projetos sociais com colaboradores em potencial.
 
 ## Tecnologias Utilizadas
 
