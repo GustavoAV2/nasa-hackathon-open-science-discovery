@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import Header from "../components/shared/Header.vue";
+import Header from "@/components/shared/Header.vue";
 import ProjectService from "@/services/project";
 import OrganizationService from "@/services/organization";
 

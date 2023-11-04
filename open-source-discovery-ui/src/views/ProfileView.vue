@@ -49,8 +49,8 @@
 </template>
 
 <script>
-import Header from "../components/shared/Header.vue";
-import ProjectMiniCard from "../components/shared/ProjectMiniCard.vue";
+import Header from "@/components/shared/Header.vue";
+import ProjectMiniCard from "@/components/shared/ProjectMiniCard.vue";
 
 export default {
   components: { Header, ProjectMiniCard },

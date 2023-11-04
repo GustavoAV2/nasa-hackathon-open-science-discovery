@@ -1,5 +1,4 @@
 <template>
-  <!-- Começo Projects -->
   <div
     class="card border border-gray-700 bg-gray-700 text-gray-50 transition-shadow shadow-xl hover:shadow-xl"
   >
@@ -34,10 +33,8 @@
           </div>
         </div>
       </div>
-      <!---->
     </div>
   </div>
-  <!-- Fim projects -->
 </template>
 
 <script>

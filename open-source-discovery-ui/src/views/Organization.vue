@@ -80,8 +80,8 @@
 </template>
 
 <script>
-import Header from "../components/shared/Header.vue";
-import ProjectMiniCard from "../components/shared/ProjectMiniCard.vue";
+import Header from "@/components/shared/Header.vue";
+import ProjectMiniCard from "@/components/shared/ProjectMiniCard.vue";
 import OrganizationService from "@/services/organization";
 import ProjectService from "@/services/project";
 

@@ -1,6 +1,4 @@
 <script>
-import tags from "../mock/tags.js";
-
 export default {
   data() {
     return {
@@ -24,15 +22,13 @@ export default {
       }
     },
     closeModal() {
-      if (this.selectedTags.length > 0){
-        localStorage.setItem('local-tags', this.selectedTags.toString())
+      if (this.selectedTags.length > 0) {
+        localStorage.setItem("local-tags", this.selectedTags.toString());
       }
       let modal = document.getElementById("crypto-modal");
       modal.className += " hidden ";
+      this.$router.push("/");
     },
-  },
-  created() {
-    this.listTags = tags;
   },
 };
 </script>

@@ -25,6 +25,7 @@ public static class DependencyInjection
 
     public static void AddRepositories(this IServiceCollection services)
     {
+        services.AddTransient<ITagRepository, TagRepository>();
         services.AddTransient<IOrganizationRepository, OrganizationRepository>();
         services.AddTransient<IProjectRepository, ProjectRepository>();
         services.AddTransient<IProjectTagRepository, ProjectTagRepository>();
@@ -38,6 +39,7 @@ public static class DependencyInjection
     public static void AddServices(this IServiceCollection services)
     {
         services.AddTransient<IUserService, UserService>();
+        services.AddTransient<ITagService, TagService>();
         services.AddTransient<IProjectService, ProjectService>();
         services.AddTransient<IOrganizationService, OrganizationService>();
         services.AddTransient<IDiscussionService, DiscussionService>();

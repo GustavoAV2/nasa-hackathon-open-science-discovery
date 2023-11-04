@@ -45,7 +45,7 @@
 <script>
 import Header from "@/components/shared/Header.vue";
 import FeedComponent from "@/components/FeedComponent.vue";
-import Modal from "@/components/Modal.vue";
+import Modal from "@/components/TagModal.vue";
 import Tag from "@/components/Tags.vue";
 
 export default {
@@ -54,6 +54,12 @@ export default {
     return {
       id: null,
     };
+  },
+  beforeCreate() {
+    let tags = localStorage.getItem("tags");
+    if (tags == null) {
+      this.$router.push("/tags");
+    }
   },
   created() {
     this.id = localStorage.getItem("id");
