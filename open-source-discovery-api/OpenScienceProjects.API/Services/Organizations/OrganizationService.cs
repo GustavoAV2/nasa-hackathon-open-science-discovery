@@ -62,5 +62,25 @@ namespace OpenScienceProjects.API.Services
                 Phone = organization.Phone,
             };
         }
+
+        public async Task<OrganizationListResponse> GetOrganizations()
+        {
+            var organization = await _organizationRepository.GetAllOrganizations();
+
+            return new OrganizationListResponse
+            {
+                Organizations = organization.Select(o => new OrganizationReponse
+                {
+                    Id = o.Id,
+                    Description = o.Description,
+                    Email = o.Email,
+                    Phone = o.Phone,
+                    Location = o.Location,
+                    Name = o.Name,
+                    OfficialSite = o.OfficialSite,
+                }).ToList(),
+            };
+
+        }
     }
 }

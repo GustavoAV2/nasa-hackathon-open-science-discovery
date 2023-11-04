@@ -16,8 +16,14 @@ public class OrganizationsController : ControllerBase
         _organizationService = organizationService;
     }
 
+    [HttpGet]
+    public Task<OrganizationListResponse> GetOrganizations()
+    {
+        return _organizationService.GetOrganizations();
+    }
+
     [HttpPost]
-    public Task<int> CreateUser(OrganizationCreateModel organizationCreateModel)
+    public Task<int> CreateOrganization(OrganizationCreateModel organizationCreateModel)
     {
         return _organizationService.CreateOrganization(organizationCreateModel);
     }

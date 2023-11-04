@@ -16,37 +16,18 @@
     <div class="w-full">
       <FeedComponent :id="id"></FeedComponent>
     </div>
-
-    <div
-      class="flex flex-col border-solid w-max items-start p-4 text-xs md:text-lg cursor-pointer"
-    >
-      <div class="flex items-center w-max">
-        <img
-          src="/images/companies/nasa.png"
-          class="rounded-full h-10 text-left"
-          alt=""
-        />
-        <span class="opacity-80">NASA</span>
-      </div>
-      <div class="flex items-center w-max">
-        <img
-          src="/images/companies/nasa.png"
-          class="rounded-full h-10 text-left"
-          alt=""
-        />
-        <span class="opacity-80">Tech for Good Labs</span>
-      </div>
-    </div>
+    <OrganizationsContainer />
   </div>
 </template>
 
 <script>
 import Header from "@/components/shared/Header.vue";
 import FeedComponent from "@/components/FeedComponent.vue";
+import OrganizationsContainer from "@/components/OrganizationsContainer.vue";
 import Tag from "@/components/Tags.vue";
 
 export default {
-  components: { Header, FeedComponent, Tag },
+  components: { Header, FeedComponent, Tag, OrganizationsContainer },
   data() {
     return {
       id: null,

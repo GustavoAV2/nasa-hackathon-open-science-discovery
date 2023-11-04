@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OpenScienceProjects.API.Domain.Entities;
+using OpenScienceProjects.API.Extensions;
 
 namespace OpenScienceProjects.API.Data.Repositories.Organizations;
 
@@ -26,5 +27,10 @@ public class OrganizationRepository : IOrganizationRepository
         return _entity
             .Where(x => x.Id == id)
             .FirstOrDefaultAsync();
+    }
+
+    public async Task<List<Organization>> GetAllOrganizations()
+    {
+        return await _entity.FilterNameNoContains(",").ToListAsync();
     }
 }

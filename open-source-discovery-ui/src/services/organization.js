@@ -2,7 +2,7 @@ import {http} from '@/config'
 
 export default{
     list(){
-        return http.get('/organizations')
+        return http.get('/Organizations')
     },
     getById(id){
         return http.get('/organizations/' + id)

@@ -6,6 +6,7 @@ namespace OpenScienceProjects.API.Services
     public interface IOrganizationService
     {
         Task<int> CreateOrganization(OrganizationCreateModel model);
+        Task<OrganizationListResponse> GetOrganizations();
         Task<OrganizationListByIdResponse> GetOrganizationListById(int id);
         Task<OrganizationListTagsByIdResponse> GetOrganizationListTagsById(int organizationId);
     }

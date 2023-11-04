@@ -7,12 +7,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3">
         <div
           class="grid grid-cols-3 text-center order-last md:order-first mt-20 md:mt-0"
-        >
-          <div>
-            <p class="font-bold text-gray-700 text-xl">89</p>
-            <p class="text-gray-400">Collaborators</p>
-          </div>
-        </div>
+        ></div>
         <div class="relative">
           <div
             class="w-48 h-48 bg-indigo-100 mx-auto rounded-full shadow-2xl absolute inset-x-0 top-0 -mt-24 flex items-center justify-center text-indigo-500"
@@ -57,14 +52,12 @@
         </div>
       </div>
       <div class="mt-12 flex flex-col justify-center">
-        <p class="text-gray-600 text-center font-light lg:px-16">
-          {{ organization.description }}
-        </p>
-        <button class="text-indigo-500 py-2 px-4 font-medium mt-4">
-          Show more
-        </button>
+        <p
+          class="text-gray-600 text-center font-light lg:px-16"
+          v-html="organization.description"
+        ></p>
 
-        <div class="flex" v-for="list_project in projects">
+        <div class="flex mt-10" v-for="list_project in projects">
           <ProjectMiniCard
             class="m-2"
             v-for="project in list_project"
