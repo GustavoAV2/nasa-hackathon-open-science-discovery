@@ -9,6 +9,7 @@
       >
         <div class="flex items-center pl-3">
           <input
+            disabled
             id="vue-checkbox"
             type="checkbox"
             value="{{ tag.name }}"
