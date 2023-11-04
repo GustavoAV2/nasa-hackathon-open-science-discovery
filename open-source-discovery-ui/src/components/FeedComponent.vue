@@ -16,9 +16,7 @@
               </div>
             </div>
 
-            <p class="text-gray-700 text-base">
-              {{ project.description }}
-            </p>
+            <p class="text-gray-700 text-base" v-html="project.description"></p>
           </div>
           <div class="flex flex-row justify-start">
             <span

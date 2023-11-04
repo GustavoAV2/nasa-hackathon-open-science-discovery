@@ -1,8 +1,6 @@
 <template>
   <Header></Header>
 
-  <Modal />
-
   <template v-if="id">
     <div class="flex text-center pt-2 text-red-600 justify-center">
       Filtered by profile tags
@@ -45,18 +43,17 @@
 <script>
 import Header from "@/components/shared/Header.vue";
 import FeedComponent from "@/components/FeedComponent.vue";
-import Modal from "@/components/TagModal.vue";
 import Tag from "@/components/Tags.vue";
 
 export default {
-  components: { Header, FeedComponent, Modal, Tag },
+  components: { Header, FeedComponent, Tag },
   data() {
     return {
       id: null,
     };
   },
   beforeCreate() {
-    let tags = localStorage.getItem("tags");
+    let tags = localStorage.getItem("local-tags");
     if (tags == null) {
       this.$router.push("/tags");
     }
