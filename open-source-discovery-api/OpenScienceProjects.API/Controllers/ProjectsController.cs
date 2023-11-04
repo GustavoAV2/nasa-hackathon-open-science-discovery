@@ -24,7 +24,7 @@ public class ProjectsController : ControllerBase
     }
 
     [HttpGet("organization/{organizationId}")]
-    public Task<List<ProjectListByIdResponse>> GetProjectByOrganizationId(int organizationId)
+    public Task<List<ProjectListByIdResponse>> GetProjectsByOrganizationId(int organizationId)
     {
         return _projectService.GetProjectListByOrganizationId(organizationId);
     }
