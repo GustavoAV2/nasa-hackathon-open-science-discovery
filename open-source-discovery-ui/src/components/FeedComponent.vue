@@ -70,9 +70,12 @@ export default {
         });
       });
     } else {
+      let tags_ids = [];
       let local_tags_string = localStorage.getItem("local-tags");
-      let tags = JSON.parse(local_tags_string);
-      let tags_ids = tags.map((t) => t.id);
+      if (local_tags_string != null) {
+        let tags = JSON.parse(local_tags_string);
+        tags_ids = tags.map((t) => t.id);
+      }
       ServiceProject.getListFiltered(tags_ids).then((response) => {
         this.projects = response.data.projects;
       });
