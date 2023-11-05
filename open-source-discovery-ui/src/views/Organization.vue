@@ -58,10 +58,10 @@
           v-html="organization.description"
         ></p>
 
-        <div class="flex mt-10" v-for="list_project in projects">
+        <div class="flex flex-wrap max-w-fit mt-10">
           <ProjectMiniCard
             class="m-2"
-            v-for="project in list_project"
+            v-for="project in projects"
             :id="project.id"
             :name="project.title"
             :description="project.description"
@@ -99,19 +99,13 @@ export default {
     generateRandom() {
       return parseInt(Math.random() * 20);
     },
-    spliceIntoChunks(arr, chunkSize) {
-      return Array.from({ length: Math.ceil(arr.length / chunkSize) }, (v, i) =>
-        arr.slice(i * chunkSize, i * chunkSize + chunkSize)
-      );
-    },
   },
   created() {
     OrganizationService.getById(this.id).then((response) => {
       this.organization = response.data;
     });
     ProjectService.getProjectByOrganizationId(this.id).then((response) => {
-      this.projects = this.spliceIntoChunks(response.data, 5);
-      console.log(this.projects);
+      this.projects = response.data;
     });
   },
 };
