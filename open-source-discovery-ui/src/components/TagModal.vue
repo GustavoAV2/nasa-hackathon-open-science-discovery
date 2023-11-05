@@ -1,4 +1,5 @@
 <script>
+import TagService from "@/services/tag";
 export default {
   data() {
     return {
@@ -16,19 +17,26 @@ export default {
         tagElement.className = this.tagClass + " bg-gray-50 hover:bg-gray-100";
         this.selectedTags.pop(selectedIndex);
       } else {
-        this.selectedTags.push(tag.id);
+        this.selectedTags.push(tag);
         let tagElement = document.getElementById("tag-" + tag.id);
         tagElement.className = this.tagClass + " bg-blue-500 hover:bg-blue-200";
       }
     },
     closeModal() {
       if (this.selectedTags.length > 0) {
-        localStorage.setItem("local-tags", this.selectedTags.toString());
+        localStorage.setItem("local-tags", JSON.stringify(this.selectedTags));
+      } else {
+        localStorage.setItem("local-tags", JSON.stringify(this.listTags));
       }
       let modal = document.getElementById("crypto-modal");
       modal.className += " hidden ";
       this.$router.push("/");
     },
+  },
+  created() {
+    TagService.getTags().then((response) => {
+      this.listTags = response.data;
+    });
   },
 };
 </script>
