@@ -44,11 +44,18 @@ export default {
       TagService.getTagsByUserId(this.id).then((response) => {
         this.tags = response.data.tags;
       });
-    } else {
-      TagService.getTags().then((response) => {
-        this.tags = response.data;
-      });
+      return;
     }
+
+    let local_tags_string = localStorage.getItem("local-tags");
+    if (local_tags_string != null) {
+      this.tags = JSON.parse(local_tags_string);
+      return;
+    }
+
+    TagService.getTags().then((response) => {
+      this.tags = response.data;
+    });
   },
 };
 </script>

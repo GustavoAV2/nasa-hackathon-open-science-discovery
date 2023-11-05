@@ -10,7 +10,7 @@
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-10 w-10 rounded-full text-left"
+          class="h-10 w-10 rounded-full text-left min-w-fit"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -20,9 +20,7 @@
             clip-rule="evenodd"
           ></path>
         </svg>
-        <span class="text-sm font-thin text-gray-900">{{
-          org.name.substr(0, 20)
-        }}</span>
+        <span class="text-sm font-thin text-gray-900">{{ org.name }}</span>
       </div>
     </template>
 
@@ -43,7 +41,6 @@ export default {
   },
   methods: {
     toOrganization(org) {
-      console.log(org);
       this.$router.push("/organization/" + org.id);
     },
   },

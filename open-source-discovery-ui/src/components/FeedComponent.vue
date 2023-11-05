@@ -70,7 +70,10 @@ export default {
         });
       });
     } else {
-      ServiceProject.getListFiltered([]).then((response) => {
+      let local_tags_string = localStorage.getItem("local-tags");
+      let tags = JSON.parse(local_tags_string);
+      let tags_ids = tags.map((t) => t.id);
+      ServiceProject.getListFiltered(tags_ids).then((response) => {
         this.projects = response.data.projects;
       });
     }
