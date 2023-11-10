@@ -4,8 +4,6 @@ Bem-vindo ao repositório da Plataforma de Colaboração entre profissionais e p
 
 ## Tecnologias Utilizadas
 
-Este projeto utiliza as seguintes tecnologias:
-
 ### Frontend
 - **Vue.js**: O framework JavaScript para construção do frontend.
 - **Tailwind CSS**: Tailwind CSS é uma estrutura CSS de código aberto.
