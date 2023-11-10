@@ -16,15 +16,20 @@ Este projeto utiliza as seguintes tecnologias:
 
 ## Funcionalidades Principais
 
-- **Cadastro de Instituições Públicas**: As instituições públicas podem se registrar na plataforma, criando perfis e adicionando informações sobre suas demandas de projetos.
+- **Exploração, Filtragem e Pesquisa de Projetos Sociais**: Nossos usuários podem facilmente explorar, filtrar e buscar projetos sociais, personalizando sua busca com tags que correspondam aos seus interesses.
+<img src="./docs/feed.png">
 
-- **Cadastro de Desenvolvedores**: Desenvolvedores podem criar perfis pessoais e listar suas habilidades, competências e experiências anteriores.
+- **Cadastro de Colaboradores** [Em desenvolvimento]: Os colaboradores podem criar perfis pessoais, onde e possivel listar suas habilidades e interesses. Isso possibilita a correspondência precisa de projetos com as preferências de cada colaborador.
+<img src="./docs/interests.png">
+
+<!-- 
+- **Cadastro de Instituições Públicas**: As instituições públicas podem se registrar na plataforma, criando perfis e adicionando informações sobre suas demandas de projetos.
 
 - **Solicitações de Colaboração**: As instituições públicas podem criar demandas de projeto e os desenvolvedores podem solicitar colaboração em projetos que correspondam às suas habilidades.
 
 - **Aceitação de Colaborações**: As instituições públicas podem aceitar ou recusar solicitações de colaboração de desenvolvedores interessados em seus projetos.
 
-- **Mensagens e Comunicação**: A plataforma permite a comunicação entre instituições públicas e desenvolvedores por meio de mensagens internas.
+- **Mensagens e Comunicação**: A plataforma permite a comunicação entre instituições públicas e desenvolvedores por meio de mensagens internas. -->
 
 
 ## Configuração do Ambiente de Desenvolvimento
@@ -94,29 +99,3 @@ A API estará disponível em `http://localhost:6001`.
 ## License
 
 ### MIT License
-
-## Contato
-
-- Gustavo Antunes Voltolini
-
-  E-mail: gustavoant.voltolini@gmail.com
-
-  [Perfil Linkedin](https://www.linkedin.com/in/gustavo-voltolini/)
-
-- Gustavo Baroni Bruder
-
-  E-mail: gugabruder@gmail.com
-
-  [Perfil Linkedin](https://www.linkedin.com/in/gustavo-baroni-bruder/)
-
-- Name: Felipe Tomelin
-
-  E-mail: tomelinfelipe@live.com
-
-  [Perfil Linkedin](https://www.linkedin.com/in/felipe-tomelin/)
-
-- Name: Vinícius Emmanuel Nitzke  
-
-  E-mail: vininitzke@gmail.com
-
-  [Perfil Linkedin](https://www.linkedin.com/in/vinicius-nitzke/)
