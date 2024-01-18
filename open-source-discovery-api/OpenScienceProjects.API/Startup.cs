@@ -1,4 +1,4 @@
-﻿    using OpenScienceProjects.API.Extensions;
+using OpenScienceProjects.API.Extensions;
 
 namespace OpenScienceProjects.API;
 
